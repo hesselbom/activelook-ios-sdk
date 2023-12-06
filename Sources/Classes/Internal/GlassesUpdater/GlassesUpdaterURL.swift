@@ -25,8 +25,8 @@ internal final class GlassesUpdaterURL {
 
     private static var _shared: GlassesUpdaterURL!
 
-    private let scheme: String = "http"
-    private let host: String = "vps468290.ovh.net"
+    private let scheme: String = "https"
+    private let host: String = "fw.activelook.net"
     private let port: Int? = nil   // Set to `nil` if no port number assigned
 
     private let minCompatibility = "4"
@@ -169,10 +169,13 @@ internal final class GlassesUpdaterURL {
         if ( version.first == separator ) {
             _ = version.removeFirst()
         }
-
+        var softwareClassStr : String = self.softwareClass.rawValue
+        if (self.softwareClass == .configurations){
+            softwareClassStr = "diff_\(softwareClassStr)"
+        }
         let pathComponents = [
             self.apiVersion,
-            self.softwareClass.rawValue,
+            softwareClassStr,
             hardware,
             token,
             version
