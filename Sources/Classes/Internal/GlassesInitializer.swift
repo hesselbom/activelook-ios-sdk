@@ -26,7 +26,7 @@ internal enum GlassesInitializerError: Error {
 
 // MARK: - Definition
 
-internal class GlassesInitializer: NSObject, CBPeripheralDelegate {
+public class GlassesInitializer: NSObject, CBPeripheralDelegate {
 
 
     // MARK: - Private properties
@@ -57,7 +57,7 @@ internal class GlassesInitializer: NSObject, CBPeripheralDelegate {
 
     // MARK: - Life cycle
 
-    override init()
+    public override init()
     {
         super.init()
         
@@ -127,7 +127,7 @@ internal class GlassesInitializer: NSObject, CBPeripheralDelegate {
     
     // MARK: - Internal methods
 
-    func initialize(_ glasses: Glasses,
+    public func initialize(_ glasses: Glasses,
                     onSuccess successClosure: @escaping () -> (Void),
                     onError errorClosure: @escaping (Error) -> (Void))
     {
@@ -262,7 +262,7 @@ internal class GlassesInitializer: NSObject, CBPeripheralDelegate {
     }
 
 
-    func peripheral(_ peripheral: CBPeripheral,
+    public func peripheral(_ peripheral: CBPeripheral,
                     didUpdateValueFor characteristic: CBCharacteristic,
                     error: Error?)
     {
@@ -275,7 +275,7 @@ internal class GlassesInitializer: NSObject, CBPeripheralDelegate {
     }
 
 
-    func peripheral(_ peripheral: CBPeripheral,
+    public func peripheral(_ peripheral: CBPeripheral,
                     didDiscoverDescriptorsFor characteristic: CBCharacteristic,
                     error: Error?)
     {

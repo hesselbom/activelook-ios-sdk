@@ -58,7 +58,7 @@ internal class GlassesUpdater {
     // If the batteryLevel is less than 10, the update will not proceed.
     private var batteryLevel: Int? {
         didSet {
-            guard let bl = batteryLevel else {
+            guard batteryLevel != nil else {
                 return
             }
 

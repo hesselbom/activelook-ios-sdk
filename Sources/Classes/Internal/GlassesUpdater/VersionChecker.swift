@@ -370,7 +370,7 @@ internal final class VersionChecker: NSObject {
             }
 
             let vers = decodedData.latest.version
-            let apiPath = decodedData.latest.api_path
+            _ = decodedData.latest.api_path
 
             DispatchQueue.main.async {
                 let fwVers = FirmwareVersion(major: vers[0],

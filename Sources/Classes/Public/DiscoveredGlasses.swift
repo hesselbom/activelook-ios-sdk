@@ -45,7 +45,7 @@ public class DiscoveredGlasses {
     // MARK: - Internal properties
 
     internal var centralManager: CBCentralManager
-    internal var peripheral: CBPeripheral
+    public var peripheral: CBPeripheral
 
     internal var connectionCallback: ((Glasses) -> Void)?
     internal var disconnectionCallback: (() -> Void)?
@@ -53,7 +53,7 @@ public class DiscoveredGlasses {
 
     // MARK: - Initializers
 
-    internal init(peripheral: CBPeripheral, centralManager: CBCentralManager, advertisementData: [String: Any]) {
+    public init(peripheral: CBPeripheral, centralManager: CBCentralManager, advertisementData: [String: Any]) {
         self.identifier = peripheral.identifier
         self.name = (advertisementData["kCBAdvDataLocalName"] as? String) ?? "Unnamed glasses"
         self.manufacturerId = (advertisementData["kCBAdvDataManufacturerData"] as? Data)?.hexEncodedString() ?? "Unknown"

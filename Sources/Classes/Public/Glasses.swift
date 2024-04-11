@@ -50,7 +50,7 @@ public class Glasses {
     // MARK: - Internal properties
 
     internal var centralManager: CBCentralManager
-    internal var peripheral: CBPeripheral
+    public var peripheral: CBPeripheral
 
     internal var disconnectionCallback: (() -> Void)?
     
@@ -169,7 +169,7 @@ public class Glasses {
 
     // MARK: - Initializers
     
-    internal init(name: String,
+    public init(name: String,
                   identifier: UUID,
                   manufacturerId: String,
                   peripheral: CBPeripheral,
@@ -204,7 +204,7 @@ public class Glasses {
     }
 
 
-    internal convenience init(discoveredGlasses: DiscoveredGlasses)
+    public convenience init(discoveredGlasses: DiscoveredGlasses)
     {
         self.init(
             name: discoveredGlasses.name,
@@ -977,7 +977,7 @@ public class Glasses {
         
         var data : [UInt8] = []
         
-        for (index,line) in imageData.data.enumerated() {
+        for (_,line) in imageData.data.enumerated() {
             if data.count + line.count <= ChunkSize {
                 data.append(contentsOf: line)
             } else {
