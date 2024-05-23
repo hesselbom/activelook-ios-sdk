@@ -76,7 +76,7 @@ internal final class VersionChecker: NSObject {
         }
     }
 
-    private var glassesFWVersion: FirmwareVersion? {
+    public var glassesFWVersion: FirmwareVersion? {
         didSet {
             if glassesFWVersion != nil {
                 self.fetchFirmwareHistory()

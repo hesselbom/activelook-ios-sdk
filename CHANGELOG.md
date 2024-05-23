@@ -2,13 +2,19 @@
 
 ## Version 4.5.4
 
-### Fixes
-- Dispatch firmware & config download error closure on main thread
+### Breaking Change
 
+- SDK init token parameter changed
+  
+### Fixes
+
+- FW update issue
+  
 ## Version 4.5.3
 
-### Features
-- Add incremental configuration support
+### Fixes
+
+- Dispatch firmware & config download error closure on main thread
 
 ## Version 4.5.2
 
